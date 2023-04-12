@@ -38,6 +38,8 @@ namespace LinqExam.Requests
          * 8) Изменять датасет (файл countries.json) нельзя.
          * 9) Изменять тесты нельзя.
          * 
+         * Полезные ресурсы: LINQ, string, Math.
+         * 
          * Train your brain!
          */
 
