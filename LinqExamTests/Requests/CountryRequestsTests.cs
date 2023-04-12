@@ -44,9 +44,9 @@ namespace LinqExam.Requests.Tests
         {
             var req = new CountryRequests();
             int expectedCount = 3;
-            string c = "Costa Rica";
-            string s = "Slovenia";
-            string t = "Tunisia";
+            string c = "Indonesia";
+            string s = "China";
+            string t = "Philippines";
 
             var actual = req.Top3CountriesByPopulation();
 
@@ -59,43 +59,99 @@ namespace LinqExam.Requests.Tests
         [TestMethod()]
         public void Top1CountryByWomenCountTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var exp = "Indonesia";
+
+            var act = req.Top1CountryByWomenCount();
+
+            Assert.AreEqual(exp, act);
         }
 
         [TestMethod()]
         public void CountriesWithPopulationSeparetedByMenAndWomenTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var act = req.CountriesWithPopulationSeparetedByMenAndWomen();
+
+            Assert.AreEqual(2658787, act["Poland"]["Men"]);
+            Assert.AreEqual(4079045, act["Poland"]["Women"]);
         }
 
         [TestMethod()]
         public void CountOfCitiesWhereWomenPopulationLessThenMenTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var exp = 43;
+
+            var act = req.CountOfCitiesWhereWomenPopulationLessThenMen();
+
+            Assert.AreEqual(exp, act);
         }
 
         [TestMethod()]
         public void WomenCountInCityWithLongestTitleTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var exp = 129917;
+
+            var act = req.WomenCountInCityWithLongestTitle();
+
+            Assert.AreEqual(exp, act);
         }
 
         [TestMethod()]
         public void CountOfCitiesWithNamesFrom2WordsTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var exp = 16;
+
+            var act = req.CountOfCitiesWithNamesFrom2Words();
+
+            Assert.AreEqual(exp, act);
         }
 
         [TestMethod()]
         public void TotalPopulationTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var exp = 277465052;
+
+            var act = req.TotalPopulation();
+
+            Assert.AreEqual(exp, act);
         }
 
         [TestMethod()]
         public void TotalPersentOfMenTest()
         {
-            Assert.Fail();
+            var req = new CountryRequests();
+
+            var exp = 48;
+
+            var act = req.TotalPersentOfMen();
+
+            Assert.AreEqual(exp, act);
+        }
+
+        [TestMethod()]
+        public void Top3LargestCitiesAndTop3SmallestCitiesTest()
+        {
+            var req = new CountryRequests();
+
+            var act = req.Top3LargestCitiesAndTop3SmallestCities();
+
+            Assert.IsTrue(act.Contains("Penisihan"));
+            Assert.IsTrue(act.Contains("Pilchowice"));
+            Assert.IsTrue(act.Contains("Cork"));
+            Assert.IsTrue(act.Contains("Lendan"));
+            Assert.IsTrue(act.Contains("Quesada"));
+            Assert.IsTrue(act.Contains("Baisha"));
         }
     }
 }
