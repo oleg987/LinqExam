@@ -1,4 +1,5 @@
 ﻿using LinqExam.Requests;
+using System.Text;
 
 namespace LinqExam
 {
@@ -6,9 +7,9 @@ namespace LinqExam
     {
         static void Main(string[] args)
         {
-            var req = new CountryRequests();
+            int[] ints = { 6, 2, 8 };
 
-            var res = req.Top3LargestCitiesAndTop3SmallestCities();
+            Array.Sort(ints);
         }
     }
 }
